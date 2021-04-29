@@ -20,16 +20,9 @@ class CreateAssignmentsTable extends Migration
             $table->string('name');
             $table->string('assignment');
             $table->string('description');
-            $table->timestamps('assignment_created_at');
+            $table->date('assignment_created_at');
             $table->string('deadline');
             $table->string('question_file')->nullable();
-
-            $table->integer('status');
-            $table->string('created_by');
-            $table->string('updated_by');
-            $table->bool('deleted');
-            $table->text('notes');
-            $table->timestamps();
         });
     }
 

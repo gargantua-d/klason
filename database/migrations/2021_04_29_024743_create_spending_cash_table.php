@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAssignmentFileTable extends Migration
+class CreateSpendingCashTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,21 +13,21 @@ class CreateAssignmentFileTable extends Migration
      */
     public function up()
     {
-        Schema::create('assignment_files', function (Blueprint $table) {
+        Schema::create('spending_cash', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('id_user');
-            $table->integer('id_assignment');
-            // $table->string('name');
-            // $table->string('assignment');
-            // $table->string('course');
-            // $table->string('assignment_description');
-            $table->string('assignment_file');
-            $table->timestamps('send_at');
+            $table->string('name');
+            $table->date('date');
+            $table->integer('total_cash');
+            $table->string('product');
+            $table->integer('qty');
+            $table->integer('price');
+            $table->integer('total_price');
 
             $table->integer('status');
             $table->string('created_by');
             $table->string('updated_by');
-            $table->bool('deleted');
+            $table->boolean('deleted');
             $table->text('notes');
             $table->timestamps();
         });
@@ -40,6 +40,6 @@ class CreateAssignmentFileTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('assignment_files');
+        Schema::dropIfExists('spending_cash');
     }
 }

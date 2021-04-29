@@ -22,7 +22,7 @@ class CreateCashsTable extends Migration
             $table->integer('status');
             $table->string('created_by');
             $table->string('updated_by');
-            $table->bool('deleted');
+            $table->boolean('deleted');
             $table->text('notes');
             $table->timestamps();
         });

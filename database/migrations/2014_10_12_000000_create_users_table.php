@@ -16,9 +16,9 @@ class CreateUsersTable extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->integer('nisn', 11)->unique()->nullable();
-            $table->integer('nis', 6)->unique()->nullable();
-            $table->integer('nip', 6)->unique()->nullable();
+            $table->integer('nisn')->unique()->nullable();
+            $table->integer('nis')->unique()->nullable();
+            $table->integer('nip')->unique()->nullable();
             $table->string('email')->unique();
             $table->string('password');
             $table->integer('no_hp');
@@ -31,7 +31,7 @@ class CreateUsersTable extends Migration
             $table->integer('status');
             $table->string('created_by');
             $table->string('updated_by');
-            $table->bool('deleted');
+            $table->boolean('deleted');
             $table->text('notes');
             $table->rememberToken();
             $table->timestamps();
