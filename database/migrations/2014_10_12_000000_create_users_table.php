@@ -24,15 +24,15 @@ class CreateUsersTable extends Migration
             $table->integer('no_hp');
             $table->integer('no_hp_ortu')->nullable();
             $table->string('address');
-            $table->integer('cash');
+            $table->integer('cash')->nullable();
             $table->string('role')->nullable();
             $table->string('level');
 
-            $table->integer('status');
-            $table->string('created_by');
-            $table->string('updated_by');
-            $table->boolean('deleted');
-            $table->text('notes');
+            $table->integer('status')->nullable();
+            $table->string('created_by')->nullable();
+            $table->string('updated_by')->nullable();
+            $table->boolean('deleted')->nullable();
+            $table->text('notes')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
