@@ -23,6 +23,13 @@ class CreateAssignmentsTable extends Migration
             $table->date('assignment_created_at');
             $table->string('deadline');
             $table->string('question_file')->nullable();
+
+            $table->integer('status');
+            $table->string('created_by');
+            $table->string('updated_by');
+            $table->boolean('deleted');
+            $table->text('notes');
+            $table->timestamps();
         });
     }
 
